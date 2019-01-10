@@ -1,1 +1,2 @@
-# gitbook-wiki-tokenplanet
+# Initial page
+
