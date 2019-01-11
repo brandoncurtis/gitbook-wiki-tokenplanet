@@ -1,13 +1,13 @@
 # Table of contents
 
 * [Home](README.md)
-* [MimbleWimble](mimblewimble.md)
-* [On-Chain Swaps](onchain-swaps.md)
-* [Decred](decred.md)
+* [Bitcoin](bitcoin/README.md)
+  * [Bitcoin Mining](bitcoin/bitcoin-mining.md)
+  * [Liquid Sidechain](bitcoin/liquid.md)
 * [Ethereum](ethereum/README.md)
   * [AZTEC Protocol](ethereum/aztec.md)
   * [Uniswap](ethereum/uniswap.md)
-* [Bitcoin](bitcoin/README.md)
-  * [Liquid Sidechain](bitcoin/liquid.md)
-* [Bitcoin Mining](bitcoin-mining.md)
+* [On-Chain Swaps](onchain-swaps.md)
+* [MimbleWimble](mimblewimble.md)
+* [Decred](decred.md)
 
