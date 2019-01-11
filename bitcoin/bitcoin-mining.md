@@ -4,6 +4,18 @@ description: how to mine on the Bitcoin testnet
 
 # Bitcoin Mining
 
+### Practical Considerations
+
+Bitcoin coinbase transactions must mature for 100 blocks before they can be spent.  This prevents the creation of chains of transactions that would be invalidated if a deep block reorganization occurs, orphaning blocks and removing their coinbase transactions from the ledger history.
+
+SoChain estimates the realtime mining hashpower based on the block rate and difficulty:
+
+* [https://chain.so/testnet/btc](https://chain.so/testnet/btc)
+* [https://en.bitcoin.it/wiki/Difficulty](https://en.bitcoin.it/wiki/Difficulty)
+* [https://bitcoinwisdom.com/bitcoin/difficulty](https://bitcoinwisdom.com/bitcoin/difficulty)
+
+
+
 ### Software
 
 #### p2pool
@@ -11,6 +23,9 @@ description: how to mine on the Bitcoin testnet
 * [https://en.bitcoin.it/wiki/P2Pool](https://en.bitcoin.it/wiki/P2Pool)
 * [https://en.bitcoinwiki.org/wiki/P2Pool](https://en.bitcoinwiki.org/wiki/P2Pool)
 * [http://p2pool.org/community/](http://p2pool.org/community/)
+* [https://github.com/p2pool/p2pool](https://github.com/p2pool/p2pool)
+* [https://github.com/jtoomim/p2pool/tree/1mb\_segwit](https://github.com/jtoomim/p2pool/tree/1mb_segwit)
+  * [https://www.reddit.com/r/Bitcoin/comments/6uweb7/p2pool\_upgrade\_for\_segwit\_compatibility/?st=jqpopahu&sh=7dc7967b](https://www.reddit.com/r/Bitcoin/comments/6uweb7/p2pool_upgrade_for_segwit_compatibility/?st=jqpopahu&sh=7dc7967b)
 
 When running p2pool locally, you can access the dashboard at the port you indicated with `-w`.
 
@@ -25,6 +40,12 @@ When running p2pool locally, you can access the dashboard at the port you indica
 * [https://wiki.poiuty.com/index.php?title=Vertcoin\_cpuminer](https://wiki.poiuty.com/index.php?title=Vertcoin_cpuminer)
 * [https://www.cryptocurrencyfreak.com/2017/08/06/vertcoin-mining-cpuminer-multi-centos-7/](https://www.cryptocurrencyfreak.com/2017/08/06/vertcoin-mining-cpuminer-multi-centos-7/)
 * [https://www.cryptocurrencyfreak.com/2017/08/07/monero-mining-cpuminer-multi-centos-7/](https://www.cryptocurrencyfreak.com/2017/08/07/monero-mining-cpuminer-multi-centos-7/)
+
+#### bmminer
+
+* [https://www.reddit.com/r/Bitcoin/comments/7lkn9y/how\_to\_manually\_set\_the\_fan\_speed\_of\_your\_bitmain/](https://www.reddit.com/r/Bitcoin/comments/7lkn9y/how_to_manually_set_the_fan_speed_of_your_bitmain/)
+* [https://github.com/dfoderick/Mining/blob/master/Antminer/bmminer.conf](https://github.com/dfoderick/Mining/blob/master/Antminer/bmminer.conf)
+* [https://bitcointalk.org/index.php?topic=2799605.0](https://bitcointalk.org/index.php?topic=2799605.0)
 
 ### Errors
 
