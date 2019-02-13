@@ -16,9 +16,36 @@ To interface with the Ledger, you'll also need to install btchip-python:
 
 {% embed url="https://github.com/LedgerHQ/btchip-python" %}
 
+## Install ElectrumX
 
+{% embed url="https://electrumx.readthedocs.io/en/latest/HOWTO.html\#prerequisites" %}
 
+### Arch Linux
 
+You will need to install some system-level dependencies for interacting with databases.
 
+```text
+export REPOS=/path/to/your/git/repos
+git clone https://aur.archlinux.org/rocksdb.git $REPOS/rocksdb
+cd $REPOS/rocksdb
+makepkg -si
+sudo pacman -S leveldb
 
+git clone git@github.com:/kyuupichan/electrumx
+cd $REPOS/electrumx
+pipenv --python 3.7
+pipenv install python-rocksdb
+pipenv install plyvel
+pipenv install
+pipenv shell
+./electrumx_server
+```
+
+{% embed url="https://www.archlinux.org/packages/extra/x86\_64/leveldb/" %}
+
+{% embed url="https://plyvel.readthedocs.io/en/latest/installation.html" %}
+
+{% embed url="https://aur.archlinux.org/packages/rocksdb/" %}
+
+{% embed url="https://github.com/twmht/python-rocksdb" %}
 
