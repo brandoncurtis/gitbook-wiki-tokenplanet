@@ -49,3 +49,17 @@ pipenv shell
 
 {% embed url="https://github.com/twmht/python-rocksdb" %}
 
+## Running ElectrumX
+
+The standard technique for configuring ElectrumX involves creating lots and lots of environmental variables:
+
+{% embed url="https://electrumx.readthedocs.io/en/latest/environment.html" %}
+
+For instance, to restrict memory usage to approximately 500MB on a resource-constrained platform like a Raspberry Pi or a HardKernel Odroid:
+
+`DB_DIRECTORY='/mnt/data/electrum-btc' DAEMON_URL=rpcuser:rpcpass@127.0.0.1 COIN=BitcoinSegwit NET=mainnet DB_ENGINE=rocksdb CACHE_MB=500 ./electrumx_server`
+
+where rpcuser and rpcpass are set in your `bitcoind` file.
+
+
+

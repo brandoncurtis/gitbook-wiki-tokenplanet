@@ -14,4 +14,9 @@
 * [Lightning Network](bitcoin/lightning-network.md)
 * [Liquid Sidechain](bitcoin/liquid.md)
 * [Electrum Wallet](bitcoin/electrum-wallet.md)
+* [Bitcoin Faucets](bitcoin/bitcoin-faucets.md)
+
+## Private Blockchains
+
+* [JPM Coin](private-blockchains/jpm-coin.md)
 
