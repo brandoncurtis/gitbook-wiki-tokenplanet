@@ -61,5 +61,37 @@ For instance, to restrict memory usage to approximately 500MB on a resource-cons
 
 where rpcuser and rpcpass are set in your `bitcoind` file.
 
+### Electrum Queries
+
+By default, ElectrumX does not listen for queries on any port or interface; you must configure this at runtime using the `SERVICES` environmental variable, for instance \`SERVICES=[tcp://localhost:50001](tcp://localhost:50001)\`.
+
+ElectrumX provides a raw TCP socket for queries.  You can use a tool like `netcat` to sling these queries.  Here are some example queries:
+
+```text
+echo '{"id": 1, "method": "blockchain.block.header", "params": ["1"]}' | nc localhost 50001
+echo '{"id": 1, "method": "mempool.get_fee_histogram", "params": []}' | nc localhost 50001
+echo '{"id": 1, "method": "blockchain.scripthash.get_history", "params": ["9c0b6d7a6f8e74f16ed5e1adae8ee70e88a7e77c8a9bcc063b44c6f43e5f7fb2"]}' | nc localhost 50001
+echo '{"id": 1, "method": "blockchain.scripthash.get_balance", "params": ["0fb72c30d33d609f6ead88fe6f76fdfc0bc92c48e5132a0a385a3c2fba6a030a"]}' | nc localhost 50001
+```
+
+`blockchain.scripthash` queries take scripthashes—the sha256 hash of the output script—as a parameter.  Bitcoin follows strange conventions for hashing and byte ordering, but you can use these scripts to convert an output script into a scripthash that will work for you.
+
+For instance, here's the output script of the coinbase transaction from [the fifth Bitcoin block](https://blockstream.info/block-height/5):
+
+`410456579536d150fbce94ee62b47db2ca43af0a730a0467ba55c79e2a7ec9ce4ad297e35cdbb8e42a4643a60eef7c9abee2f5822f86b1da242d9c2301c431facfd8ac`
+
+To generate the scripthash in a bash terminal:
+
+```text
+$ echo -n 410456579536d150fbce94ee62b47db2ca43af0a730a0467ba55c79e2a7ec9ce4ad297e35cdbb8e42a4643a60eef7c9abee2f5822f86b1da242d9c2301c431facfd8ac | xxd -r -p | sha256sum -b | cut -d' ' -f1 | tac -r -s ..
+0fb72c30d33d609f6ead88fe6f76fdfc0bc92c48e5132a0a385a3c2fba6a030a
+```
+
+Use this script to query the balance of this output:
+
+```text
+echo '{"id": 1, "method": "blockchain.scripthash.get_balance", "params": ["0fb72c30d33d609f6ead88fe6f76fdfc0bc92c48e5132a0a385a3c2fba6a030a"]}' | nc localhost 50001
+```
+
 
 
