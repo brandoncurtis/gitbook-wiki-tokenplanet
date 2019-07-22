@@ -15,6 +15,8 @@
 * [Liquid Sidechain](bitcoin/liquid.md)
 * [Electrum Wallet](bitcoin/electrum-wallet.md)
 * [Bitcoin Faucets](bitcoin/bitcoin-faucets.md)
+* [Wasabi Wallet](bitcoin/wasabi-wallet.md)
+* [JoinMarket](bitcoin/joinmarket.md)
 
 ## Private Blockchains
 
