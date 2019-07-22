@@ -93,5 +93,15 @@ Use this script to query the balance of this output:
 echo '{"id": 1, "method": "blockchain.scripthash.get_balance", "params": ["0fb72c30d33d609f6ead88fe6f76fdfc0bc92c48e5132a0a385a3c2fba6a030a"]}' | nc localhost 50001
 ```
 
+You can also use the bitcoinjs-lib NodeJS library to convert an address to an output script and hash it appropriately to generate a scripthash that will work for Electrum queries:
 
+```text
+const bitcoin = require('bitcoinjs-lib')
+address='38z1Y5NrzcRnEady3MppbCyG9s7mwcgHmB'
+let script = bitcoin.address.toOutputScript(address)
+let hash = bitcoin.crypto.sha256(script)
+let reversedHash = new Buffer(hash.reverse())
+console.log(address, ' maps to ', reversedHash.toString('hex'))
+38z1Y5NrzcRnEady3MppbCyG9s7mwcgHmB  maps to  9c0b6d7a6f8e74f16ed5e1adae8ee70e88a7e77c8a9bcc063b44c6f43e5f7fb2
+```
 
