@@ -22,3 +22,7 @@
 
 * [JPM Coin](private-blockchains/jpm-coin.md)
 
+## Hardware
+
+* [Raspberry Pi](hardware/raspberry-pi.md)
+
