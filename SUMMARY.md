@@ -26,3 +26,7 @@
 
 * [Raspberry Pi](hardware/raspberry-pi.md)
 
+## Altcoins <a id="altcoin"></a>
+
+* [Orchid OXT](altcoin/orchid-oxt.md)
+
